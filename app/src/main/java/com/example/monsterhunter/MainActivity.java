@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.huawei.hms.ads.AdParam;
+import com.huawei.hms.ads.BannerAdSize;
+import com.huawei.hms.ads.HwAds;
+import com.huawei.hms.ads.banner.BannerView;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -26,6 +31,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Initialize the HUAWEI Ads SDK.
+        HwAds.init(this);
+
+        // Obtain BannerView based on the configuration in layout/ad_fragment.xml.
+        BannerView bottomBannerView = findViewById(R.id.hw_banner_view);
+        AdParam adParam = new AdParam.Builder().build();
+        bottomBannerView.loadAd(adParam);
+
+
         mAuth = FirebaseAuth.getInstance();
         Button loginButton = findViewById(R.id.buttonLogin);
         final EditText usernameInput = findViewById(R.id.usernameInput);

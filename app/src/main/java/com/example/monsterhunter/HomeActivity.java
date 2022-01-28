@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.huawei.hms.ads.banner.BannerView;
 
-public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
+public class HomeActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     @Override
@@ -43,21 +43,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 finish();
             }
         });
-        Button adsbutton = findViewById(R.id.adsButton);
-        adsbutton.setOnClickListener(this);
+
 
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.adsButton:
-                Intent ads = new Intent(this, BannerActivity.class);
-                startActivity(ads);
-                break;
-            default:
-                break;
-        }
-
-    }
 }

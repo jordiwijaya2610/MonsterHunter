@@ -67,16 +67,13 @@ public class RetrofitItemAdapter extends BaseAdapter {
         } else
             holder = (ViewHolder) vi.getTag();
 
-        // now set your text view here like
 
-        // holder.tvName.setText("Bla Bla Bla");
 
         holder.tvName.setText(mMonster.get(position).getName());
         holder.tvType.setText(mMonster.get(position).getType());
         holder.tvSpecies.setText(mMonster.get(position).getSpecies());
 
 
-        // return your view
         return vi;
     }
 }

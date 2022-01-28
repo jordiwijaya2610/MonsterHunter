@@ -6,14 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
-    <com.huawei.hms.ads.banner.BannerView
-        android:id="@+id/hw_banner_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        hwads:adId="testw6vs28auh3"
-        hwads:bannerSize="BANNER_SIZE_360_57"
-        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/hometext"
         android:layout_width="match_parent"
@@ -39,18 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"></Button>
-    <Button
-        android:id="@+id/adsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:padding="10dp"
-        android:text="Ads"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/exploreButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"></Button>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

@@ -44,22 +44,7 @@ public class MonsterHunter extends AppCompatActivity implements NavigationView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monster_hunter);
-        // Initialize the HUAWEI Ads SDK.
-        HwAds.init(this);
 
-        // Obtain BannerView based on the configuration in layout/ad_fragment.xml.
-        BannerView bottomBannerView = findViewById(R.id.hw_banner_view);
-        AdParam adParam = new AdParam.Builder().build();
-        bottomBannerView.loadAd(adParam);
-
-        // Call new BannerView(Context context) to create a BannerView class.
-        BannerView topBannerView = new BannerView(this);
-        topBannerView.setAdId("testw6vs28auh3");
-        topBannerView.setBannerAdSize(BannerAdSize.BANNER_SIZE_SMART);
-        topBannerView.loadAd(adParam);
-
-        RelativeLayout rootView = findViewById(R.id.root_view);
-        rootView.addView(topBannerView);
 
 
         mAuth = FirebaseAuth.getInstance();
