@@ -16,8 +16,21 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
+    signingConfigs {
+        config {
+            storeFile file('C:\\Users\\jordi wijaya\\Documents\\Jordi Wijaya\\belajar\\SEMESTER 5\\MOBPROG\\monsterhunterkey.jks')
+            storePassword '123123'
+            keyPassword '123123'
+            keyAlias 'key0'
+        }
+    }
     buildTypes {
+        debug {
+            signingConfig signingConfigs.config
+        }
         release {
+            signingConfig signingConfigs.config
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -48,5 +61,6 @@ dependencies {
     implementation 'com.huawei.hms:ads-identifier:3.4.39.302'
     implementation 'com.huawei.hms:ads-installreferrer:3.4.39.302'
     implementation 'com.huawei.hms:ads-lite:13.4.39.302'
+    implementation 'com.huawei.hms:push:6.1.0.300'
 }
 apply plugin: 'com.huawei.agconnect'
